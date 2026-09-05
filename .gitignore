@@ -1,0 +1,50 @@
+# ── Entorno Python ──────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Entorno virtual ──────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Variables de entorno (NUNCA commitear) ───────────────
+.env
+.env.*
+!.env.example
+
+# ── Base de datos local ──────────────────────────────────
+*.db
+*.sqlite3
+
+# ── Docker ───────────────────────────────────────────────
+postgres_data/
+
+# ── IDEs ─────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ── Logs ─────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Coverage / Tests ─────────────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ── Claude Code ──────────────────────────────────────────
+.claude/
+
+# ── Documentación de proceso (solo uso personal) ─────────
+docs/
