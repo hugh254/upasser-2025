@@ -1,8 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
+from sqlalchemy import text
 
 from .config import get_settings
+from .database import engine
 from app.routers import (
     auth, roles, permissions, companies, branches, users, clients,
     zones, devices, gates, credentials, transaction_types,
@@ -45,6 +48,19 @@ def read_root():
         "version": "1.0.0",
         "status": "Running",
     }
+
+
+@app.get("/health")
+async def health_check():
+    try:
+        async with engine.connect() as conn:
+            await conn.execute(text("SELECT 1"))
+        return {"status": "healthy", "database": "connected"}
+    except Exception:
+        return JSONResponse(
+            status_code=503,
+            content={"status": "unhealthy", "database": "unreachable"},
+        )
 
 
 app.include_router(auth.router)

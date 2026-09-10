@@ -1,0 +1,38 @@
+# ── Entorno Python ───────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# ── Variables de entorno ─────────────────────────────────
+.env
+.env.*
+
+# ── Tests / Coverage ─────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Git ──────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── Documentación ────────────────────────────────────────
+docs/
+docs-diagrams/
+*.md
+!README.md
+
+# ── IDEs ─────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ── Claude Code ──────────────────────────────────────────
+.claude/
